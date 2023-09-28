@@ -18,22 +18,31 @@ def index():
 @app.route("/ask", methods=["POST"])
 def ask():
     user_input = request.form["user_input"]
+    user_input="Be an AI-powered chatbot that helps students to clear all their coding concepts and doubts, and provides personalized learning resources based on their level of understanding. ....Now the coding  queries starts : ```"+user_input+"```"
     
-    # Send user input to OpenAI GPT-3 model
-    response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt="You are  an Educational Chatbot for Juniors: Empowering Students to Navigate Academic and Non-Academic Challenges .I want you to serve as a dependable and accessible resource for junior students and try to give answers as much interactive as possible  and now  the next few lines will user input process them: `"+   user_input+"`",
-        max_tokens=50  # Adjust this based on your needs
-    )
+    # # Send user input to OpenAI GPT-3 model
+    # response = openai.Completion.create(
+    #     engine="text-davinci-002",
+    #     prompt="You are  an Educational Chatbot for Juniors: Empowering Students to Navigate Academic and Non-Academic Challenges .I want you to serve as a dependable and accessible resource for junior students and try to give answers as much interactive as possible  and now  the next few lines will user input process them: `"+   user_input+"`",
+    #     max_tokens=50  # Adjust this based on your needs
+    # )
+    from bardapi import Bard
+
     
-    bot_response = response.choices[0].text.strip()
+    bard = Bard(token='bQgxCfPTL1GwyoIr0s7tme5TDIaKrFwFVPY2pby6H6Sg1vnto5CbPmaau7Q06nFs6SI3fg.')
+    response=bard.get_answer(user_input)['content']
+    print(response)
+    print(type(response))
+    
+    # bot_response = response.choices[0].text.strip()
+    
     from bardapi import Bard
 
     bard = Bard(token='bQgxCfPTL1GwyoIr0s7tme5TDIaKrFwFVPY2pby6H6Sg1vnto5CbPmaau7Q06nFs6SI3fg.')
-    audio = bard.speech(bot_response)
+    audio = bard.speech(response)
     with open("speech.mp3", "wb") as f:
         f.write(bytes(audio['audio']))
-    return jsonify({"bot_response": bot_response})
+    return jsonify({"bot_response": response})
 
 
 UPLOAD_FOLDER = 'uploads'
