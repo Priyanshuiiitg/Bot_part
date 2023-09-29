@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,52 +8,56 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
     <title>Chatbot</title>
 </head>
-<body >
-   
-  
+
+<body>
+
+
 
     <div class="chat-container">
-        
-        <div class="chat-box">
-            
-            <h1 style="text-align: center; color: black; font-size: 40px;">~ENIGMA</h1>
+
+        <div class="chat-box left-box">
+
+            <h1 class="connect-mentors-btn"><a href="http://localhost:3000"> Connect To Mentors </a></h1>
+        </div>
+
+        <div class="verticle-line"></div>
+
+        <div class="chat-box right-box">
+            <h1 class="chat-heading"><img style="width: 100px; height: 100px;" src="../static/robo.gif" alt="robot" />
+                ~ENIGMA</h1>
             <div class="chat-message" id="chat-log">
-                
+
                 <div class="bot-message">Welcome! How can I assist you today?</div>
                 <!-- <div  class="user-message"></div> -->
                 <!-- <img data-audio-src="audio.mp3" class="audio-image" width="20" height="20" src="https://img.icons8.com/ios-filled/100/high-volume--v1.png" alt="high-volume--v1"/> -->
-                
+
             </div>
-            
-            
-        
+
             <div class="user-input">
                 <div>
-                   
-                   
                     <label for="image-input" style="cursor: pointer;">
-                        <img style="padding-right: 10px; margin-bottom: 5px;" id="upload-image" width="40" height="40" src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/external-image-multimedia-kiranshastry-solid-kiranshastry-1.png" alt="external-image-multimedia-kiranshastry-solid-kiranshastry-1"/>
+                        <img style="padding-right: 10px; margin-bottom: 5px;" id="upload-image" width="40" height="40"
+                            src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/external-image-multimedia-kiranshastry-solid-kiranshastry-1.png"
+                            alt="external-image-multimedia-kiranshastry-solid-kiranshastry-1" />
                     </label>
-                    
                     <!-- Input field for selecting an image file (hidden) -->
                     <input type="file" id="image-input" accept="image/*" style="display: none;">
-
-
                     <div style="background-color: wheat;" id="status"></div>
-                    
-                   
-                      
-                
                 </div><input class="olc" type="text" id="user-input" placeholder="Ask your doubts..." autofocus>
                 <!-- <button id="speech-button"><i class="fas fa-microphone"></i></button> -->
-             <img id="send-button" width="40" height="40" src="https://img.icons8.com/puffy/64/experimental-enter-2-puffy.png" alt="experimental-enter-2-puffy"/>
-               
-                
+                <img id="send-button" width="40" height="40"
+                    src="https://img.icons8.com/puffy/64/experimental-enter-2-puffy.png"
+                    alt="experimental-enter-2-puffy" />
+
+
             </div>
         </div>
     </div>
-   
-    
+
+
+
+
     <script src="../static/script.js"></script>
 </body>
+
 </html>

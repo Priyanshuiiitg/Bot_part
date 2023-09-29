@@ -1,123 +1,163 @@
 body {
-    background-image: url('../static/hell.jpg'); /* Replace 'your-background-image.jpg' with your image file path */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0; /* Remove default body margin for full coverage */
-    padding: 0; /* Remove default body padding */
+  background-image: url("../static/back1.gif"); /* Replace 'your-background-image.jpg' with your image file path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0; /* Remove default body margin for full coverage */
+  padding: 0; /* Remove default body padding */
 }
 .chat-container {
-    
-    background-image: url('../static/hell.jpg'); /* Use the same background image as the body */
-    background-size: cover; /* Cover the chatbot container with the background image */
-    background-repeat: no-repeat;
-    background-position: center center; /* Center the background image */
-    width: 100%; /* Ensure the chatbot container covers the entire viewport width */
-    height: 100vh; /* Match the viewport height */
-    display: flex;
-    justify-content: flex-end; /* Move content to the right */
-    align-items: center;
-    position: relative; /* Ensure the chatbot content is positioned relative to this container */
-    z-index: 1; /* Ensure the chatbot content is above the background image */
-    padding-right: 100px; /* Add some padding from the extreme right */
-    padding-bottom: 20px;
-    box-sizing: border-box; /* Include padding in the width calculation */
+  background-image: url("../static/back1.gif"); /* Use the same background image as the body */
+  background-size: cover; /* Cover the chatbot container with the background image */
+  background-repeat: no-repeat;
+  background-position: center center; /* Center the background image */
+  width: 100%; /* Ensure the chatbot container covers the entire viewport width */
+  height: 100vh; /* Match the viewport height */
+  display: flex;
+  justify-content: center; /* Move content to the right */
+  align-items: center;
+  position: relative; /* Ensure the chatbot content is positioned relative to this container */
+  z-index: 1; /* Ensure the chatbot content is above the background image */
+  padding-right: 100px; /* Add some padding from the extreme right */
+  padding-bottom: 20px;
+  box-sizing: border-box; /* Include padding in the width calculation */
 }
-
 
 .chat-box {
-   
-    width: 600px;
-    background-color:  rgba(0, 0, 0, 0.2);
-    /* border: 1px solid black; */
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-    border-radius: 40px;
-    overflow-y: auto; /* Add vertical scroll bar when content overflows vertically */
-    overflow-x: hidden; /* Hide horizontal scroll bar (if any) */
-    /* overflow: hidden; */
-    height: 600px; /* Limit the chat box height; adjust as needed */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* border: 1px solid black; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  overflow-y: auto; /* Add vertical scroll bar when content overflows vertically */
+  overflow-x: hidden; /* Hide horizontal scroll bar (if any) */
+  /* overflow: hidden; */
+  height: 600px; /* Limit the chat box height; adjust as needed */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
+
+.left-box {
+  border-radius: 40px 0px 0px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connect-mentors-btn {
+  background-color: rgba(125, 47, 104, 0.7);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+a:link {
+  color: black;
+  /* background-color: transparent; */
+  text-decoration: none;
+}
+.connect-mentors-btn :hover {
+  background-color: rgba(125, 47, 110, 0.7);
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.right-box {
+  border-radius: 0px 40px 40px 0px;
+}
+
+.verticle-line {
+  width: 2px;
+  height: 600px;
+  border: 2px solid gray;
+}
+
+.chat-heading {
+  text-align: center;
+  color: black;
+  font-size: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+}
+
 .chat-message {
-    
-    color: white;
-    /* text-align: right; */
-    font-size: 20px;
-    padding: 10px;
-   
-    /* border-bottom: 1px solid black; */
-    overflow-wrap: break-word; /* Wrap long text within the message box */
+  color: white;
+  /* text-align: right; */
+  font-size: 20px;
+  padding: 10px;
+
+  /* border-bottom: 1px solid black; */
+  overflow-wrap: break-word; /* Wrap long text within the message box */
 }
 
 .bot-message {
- 
-    background-color: black;
-    color: #fff;
-    font-size: 20px;
+  background-color: black;
+  color: #fff;
+  font-size: 20px;
 
-    border-radius: 25px;
-    padding: 10px;
-    margin: 20px;
-    display: inline-block;
-    max-width: 75%; /* Limit message width to 75% of the chat box */
+  border-radius: 25px;
+  padding: 10px;
+  margin: 20px;
+  display: inline-block;
+  max-width: 75%; /* Limit message width to 75% of the chat box */
 }
 
 .user-input {
-    
-    display: flex;
-    font-size: 20px;
-    border: none;
-height: 35px;
-    padding: 10px;
-    /* border-top: 1px solid #ddd; */
-    background-color: transparent;
+  display: flex;
+  font-size: 20px;
+  border: none;
+  height: 35px;
+  padding: 10px;
+  /* border-top: 1px solid #ddd; */
+  background-color: transparent;
 }
 
 #user-input {
-    
-    flex-grow: 1;
-    font-size: 20px;
-   background-color: transparent;
-    padding: 5px;
-    /* color: black; */
-    /* border: 1px solid #ccc; */
-    border-radius: 20px;
-    border-color: black;
-    margin-right: 10px;
-    /* border: none; */
-    font-size: 20px;
-    outline: none; 
+  flex-grow: 1;
+  font-size: 20px;
+  background-color: transparent;
+  padding: 5px;
+  /* color: black; */
+  /* border: 1px solid #ccc; */
+  border-radius: 20px;
+  border-color: black;
+  margin-right: 10px;
+  /* border: none; */
+  font-size: 20px;
+  outline: none;
 }
 
 #send-button {
-    background-color: transparent;
-   
-    color: #fff;
-    border: none;
-    /* border-radius: 5px; */
-    cursor: pointer;
-    font-size: 14px;
-    padding: 1px 5px;
-    outline: none; /* Remove the default button outline */
+  background-color: transparent;
+
+  color: #fff;
+  border: none;
+  /* border-radius: 5px; */
+  cursor: pointer;
+  font-size: 14px;
+  padding: 1px 5px;
+  outline: none; /* Remove the default button outline */
 }
 
 #send-button:hover {
-    background-color: transparent
+  background-color: transparent;
 }
-.olc::placeholder{
-    font-size: 20px;
-    color: black;
+.olc::placeholder {
+  font-size: 20px;
+  color: black;
 }
-.user-message{
-    float: right;
-    background-color: black;
-    color: #fff;
-    font-size: 20px;
+.user-message {
+  float: right;
+  background-color: black;
+  color: #fff;
+  font-size: 20px;
 
-    border-radius: 25px;
-    padding: 10px;
-    margin: auto;
-    /* display: inline-block; */
-    /* Limit message width to 75% of the chat box */
+  border-radius: 25px;
+  padding: 10px;
+  margin: auto;
+  /* display: inline-block; */
+  /* Limit message width to 75% of the chat box */
 }
